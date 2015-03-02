@@ -36,19 +36,10 @@ function generateMandelbrot(reMin, reMax, imMin, imMax) {
             }
 
             if (inSet){
-                //console.log("painting to x: " + x + ", y: " + y)
                 ctx.fillRect(x, y, 1, 1);
             }
         }
     }
-}
-
-function initCoordinateSystem() {
-    console.log("initializing coordinate system");
-    var ctx = globals.canvas.ctx;
-
-    ctx.translate(globals.canvas.width / 2, globals.canvas.height / 2);
-    ctx.scale(1 / globals.delta, -1 / globals.delta);
 }
 
 function initialize() {
@@ -63,7 +54,6 @@ function initialize() {
     globals.imMax = 1.2;
     globals.imMin = -1.2;
 
-    //initCoordinateSystem();
     generateMandelbrot(globals.reMin, globals.reMax, 
                        globals.imMin, globals.imMax);
 }
